@@ -8,7 +8,8 @@ st.title("Sentiment Analyzer Using LangChain")
 st.write("Enter some text below...")
 
 api_key = st.secrets["gemini"]["api_key"]
-llm = ChatGoogleGenerativeAI("google_genai:gemini-2.0-flash",google_api_key=api_key)
+
+llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", google_api_key=api_key)
 
 sentiment_prompt = PromptTemplate(
     input_variables=["text"],
@@ -60,5 +61,6 @@ if st.button("Analyze"):
         st.subheader("Sentiment Analysis, Threat words and Named entities in text")
 
         st.write(result)
+
 
 
