@@ -13,7 +13,7 @@ st.markdown(
     <style>
     .stApp {
         background-color: #464B65;
-        color: #343148;
+        color: white;
   }
     </style>
     """,
@@ -76,6 +76,7 @@ if st.button("Submit"):
         st.write(result)
 
   
+
 
 
 
