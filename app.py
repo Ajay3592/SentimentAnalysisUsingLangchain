@@ -4,8 +4,24 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
 # Set up the Streamlit UI
-st.title("Sentiment Analyzer Using LangChain")
-st.write("Enter some text below...")
+st.markdown("""
+    <style>
+    body {
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+    }
+    </style>
+""", unsafe_allow_html=True)
+st.markdown("""
+    <style>
+    h1 {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    </style>
+""", unsafe_allow_html=True)
+st.title("Sentiment Analysis,Threat word detection and NER Using LangChain")
+st.write("===============================[Enter some text below...===============================]")
 
 api_key = st.secrets["gemini"]["api_key"]
 
@@ -44,10 +60,10 @@ def analyze_text(text):
     }
 
 # Text input from user
-user_input = st.text_area("Your text:", height=150)
+user_input = st.text_area("Your text:", height=100)
 
 # Analyze button
-if st.button("Analyze"):
+if st.button("Submit"):
     if user_input.strip() == "":
         st.warning("Please enter some text to analyze.")
     else:
@@ -61,6 +77,7 @@ if st.button("Analyze"):
         st.subheader("Sentiment Analysis, Threat words and Named entities in text")
 
         st.write(result)
+
 
 
 
