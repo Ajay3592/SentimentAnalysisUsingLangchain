@@ -5,14 +5,14 @@ from langchain.chains import LLMChain
 
 # Set up the Streamlit UI
 st.title("Sentiment Analysis Using LangChain")
-st.write("===============================[Enter some text below...===============================]")
+st.write("[===============================[Enter some text below...===============================]")
 
 # Inject CSS to change background color
 st.markdown(
     """
     <style>
     .stApp {
-        background-color: #ff0000;
+        background-color: #464B65;
         color: white;
     }
     </style>
@@ -74,6 +74,7 @@ if st.button("Submit"):
         st.subheader("Sentiment Analysis, Threat words and Named entities in text")
 
         st.write(result)
+
 
 
 
