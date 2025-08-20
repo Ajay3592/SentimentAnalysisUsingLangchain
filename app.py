@@ -14,7 +14,11 @@ st.markdown(
     .stApp {
         background-color: #464B65;
         color: white;
-
+  }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 api_key = st.secrets["gemini"]["api_key"]
 
@@ -71,11 +75,8 @@ if st.button("Submit"):
 
         st.write(result)
 
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+  
+
 
 
 
