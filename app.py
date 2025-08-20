@@ -1,5 +1,5 @@
 import streamlit as st
-#from langchain.chat_models import ChatGoogleGenerativeAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
@@ -60,4 +60,5 @@ if st.button("Analyze"):
         st.subheader("Sentiment Analysis, Threat words and Named entities in text")
 
         st.write(result)
+
 
