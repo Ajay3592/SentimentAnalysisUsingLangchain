@@ -1,5 +1,5 @@
 import streamlit as st
-from langchain.chat_models import init_chat_model
+from langchain.chat_models import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
@@ -8,7 +8,7 @@ st.title("Sentiment Analyzer Using LangChain")
 st.write("Enter some text below...")
 
 api_key = st.secrets["gemini"]["api_key"]
-llm = init_chat_model("google_genai:gemini-2.0-flash",google_api_key=api_key)
+llm = ChatGoogleGenerativeAI("google_genai:gemini-2.0-flash",google_api_key=api_key)
 
 sentiment_prompt = PromptTemplate(
     input_variables=["text"],
@@ -58,4 +58,5 @@ if st.button("Analyze"):
 
         # Display results
         st.subheader("Sentiment Analysis, Threat words and Named entities in text")
+
         st.write(result)
