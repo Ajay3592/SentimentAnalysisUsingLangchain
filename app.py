@@ -4,24 +4,21 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 
 # Set up the Streamlit UI
-st.markdown("""
-    <style>
-    body {
-        background: linear-gradient(to right, #ff7e5f, #feb47b);
-    }
-    </style>
-""", unsafe_allow_html=True)
-st.markdown("""
-    <style>
-    h1 {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    </style>
-""", unsafe_allow_html=True)
 st.title("Sentiment Analysis,Threat word detection and NER Using LangChain")
 st.write("===============================[Enter some text below...===============================]")
+
+# Inject CSS to change background color
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #1e1e1e;
+        color: white;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
 api_key = st.secrets["gemini"]["api_key"]
 
@@ -77,6 +74,7 @@ if st.button("Submit"):
         st.subheader("Sentiment Analysis, Threat words and Named entities in text")
 
         st.write(result)
+
 
 
 
